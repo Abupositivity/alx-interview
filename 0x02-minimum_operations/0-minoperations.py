@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Minimum Operation's Module"""
 
+
 def minOperations(n):
     """
     Gets the fewest no of ops needed to end up with exactly
