@@ -10,6 +10,7 @@ def print_solution(board):
         solution.append([row, board[row]])
     print(solution)
 
+
 def is_safe(board, row, col):
     """Checks if a queen can be placed on the board at position (row, col)."""
     for r in range(row):
@@ -17,6 +18,7 @@ def is_safe(board, row, col):
         if c == col or abs(c - col) == abs(r - row):
             return False
     return True
+
 
 def solve_n_queens(board, row, n):
     """Uses backtracking to find all solutions for the N Queens problem."""
@@ -29,6 +31,7 @@ def solve_n_queens(board, row, n):
             solve_n_queens(board, row + 1, n)
             board[row] = -1  # Backtrack
 
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
@@ -37,7 +40,7 @@ def main():
         n = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
-        sys.exit(1)    
+        sys.exit(1)
     if n < 4:
         print("N must be at least 4")
         sys.exit(1)
