@@ -2,6 +2,7 @@
 """ N queens puzzle"""
 import sys
 
+
 def print_solution(board):
     """Prints the board configuration as a list of positions."""
     solution = []
