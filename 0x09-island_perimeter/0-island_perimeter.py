@@ -31,5 +31,4 @@ def island_perimeter(grid):
                 # Check if the right is water or out of bounds
                 if j == cols - 1 or grid[i][j + 1] == 0:
                     perimeter += 1
-    
     return perimeter
