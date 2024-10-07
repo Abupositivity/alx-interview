@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""0. Prime Game - Maria and Ben are playing a game"""
+"""0. Prime Game - Determining d winner of a game played by Maria&Ben"""
 
 
 def isWinner(x, nums):
@@ -9,9 +9,10 @@ def isWinner(x, nums):
     if x < 1 or not nums:
         return None
 
-    # Precompute prime numbers up to the maximum number in nums using the Sieve of Eratosthenes
+    # Precompute prime nos up to d max no in nums using d Sieve of Eratosthenes
     max_n = max(nums)
-    primes = [True] * (max_n + 1)  # Create a list of True values for prime number flags
+    primes = [True] * (max_n + 1)
+    # Create a list of True values for prime number flags
     primes[0] = primes[1] = False  # 0 and 1 are not prime numbers
 
     # Sieve of Eratosthenes to identify prime numbers
@@ -20,7 +21,7 @@ def isWinner(x, nums):
             for j in range(i * i, max_n + 1, i):
                 primes[j] = False  # Mark multiples of i as not prime
 
-    # Calculate the number of prime numbers up to each number from 0 to max_n
+    # Calculate the no. of prime numbers up to each no. from 0 to max_n
     prime_count = [0] * (max_n + 1)
     for i in range(1, max_n + 1):
         prime_count[i] = prime_count[i - 1] + (1 if primes[i] else 0)
@@ -30,7 +31,7 @@ def isWinner(x, nums):
     ben_wins = 0
 
     for n in nums:
-        # If the number of primes up to n is odd, Maria wins; if even, Ben wins
+        # If d no. of primes up to n is odd, Maria wins; if even, Ben wins
         if prime_count[n] % 2 == 1:
             maria_wins += 1
         else:
